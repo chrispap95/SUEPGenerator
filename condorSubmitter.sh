@@ -1,10 +1,10 @@
 #!/usr/bin/sh
 source ${PWD}/prepareCondor.sh
 
-scenarios=(generic leptonic hadronic)
+scenarios=(generic hadronic leptonic)
 mMed=(125 200 300 400 750 1000)
 evtsPerJob=5000
-nJobs=10
+nJobs=4
 
 for sc in ${scenarios[@]}
 do
@@ -29,6 +29,6 @@ echo "Arguments = "${argument} >> jdl/condor_${namestring}.jdl
 echo "Queue "${nJobs} >> jdl/condor_${namestring}.jdl
 
 # Submit job
-#condor_submit jdl/condor_${namestring}.jdl
+condor_submit jdl/condor_${namestring}.jdl
 done
 done

@@ -22,7 +22,7 @@ eval `scramv1 runtime -sh` # cmsenv is an alias not on the workers
 echo $CMSSW_BASE "is the CMSSW we have on the local worker node"
 
 # run the desired code
-cmsRun Pythia8Interface/test/suep_decay_${scenario}.py maxEvents=${numEvts} mMed=${mMed}
-xrdcp -f output_numEvent${numEvts}.root root://cmseos.fnal.gov//store/user/chpapage/SUEPTest/mMed${mMed}_gen14TeV_${scenario}_${cluster}_${process}.root
+cmsRun SUEPGenerator/Pythia8Interface/test/suep_decay_${scenario}.py maxEvents=${numEvts} mMed=${mMed}
+xrdcp -f output_numEvent${numEvts}.root root://cmseos.fnal.gov//store/user/chpapage/SUEPTest/mMed${mMed}_gen14TeV_${scenario}_HT100_${cluster}_${process}.root
 rm output_numEvent${numEvts}.root
  
