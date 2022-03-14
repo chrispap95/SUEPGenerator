@@ -1,0 +1,4 @@
+*.root
+jdl/
+log/
+docker_stderror
