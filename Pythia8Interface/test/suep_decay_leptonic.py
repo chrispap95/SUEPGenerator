@@ -148,7 +148,7 @@ process.genHTFilter = cms.EDFilter("GenHTFilter",
    src = cms.InputTag("ak4GenJets"), #GenJet collection as input
    jetPtCut = cms.double(30.0), #GenJet pT cut for HT
    jetEtaCut = cms.double(4.5), #GenJet eta cut for HT
-   genHTcut = cms.double(1000.0) #genHT cut
+   genHTcut = cms.double(100.0) #genHT cut
 )
 
 # Path and EndPath definitions

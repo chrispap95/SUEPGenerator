@@ -19,6 +19,24 @@ options.register('mMed',
                  VarParsing.VarParsing.varType.float,         # string, int, or float
                  "Scalar mediator mass.")
 
+options.register('mDark',
+                 1., # default value
+                 VarParsing.VarParsing.multiplicity.singleton, # singleton or list
+                 VarParsing.VarParsing.varType.float,         # string, int, or float
+                 "Dark quark mass.")
+
+options.register('temp',
+                 1., # default value
+                 VarParsing.VarParsing.multiplicity.singleton, # singleton or list
+                 VarParsing.VarParsing.varType.float,         # string, int, or float
+                 "Temperature of the dark quark distribution.")
+
+options.register('ht',
+                 100., # default value
+                 VarParsing.VarParsing.multiplicity.singleton, # singleton or list
+                 VarParsing.VarParsing.varType.float,         # string, int, or float
+                 "HT gen cut.")
+
 options.parseArguments()
 
 
@@ -146,7 +164,7 @@ process.genHTFilter = cms.EDFilter("GenHTFilter",
    src = cms.InputTag("ak4GenJets"), #GenJet collection as input
    jetPtCut = cms.double(30.0), #GenJet pT cut for HT
    jetEtaCut = cms.double(4.5), #GenJet eta cut for HT
-   genHTcut = cms.double(1000.0) #genHT cut
+   genHTcut = cms.double(100.0) #genHT cut
 )
 
 # Path and EndPath definitions
